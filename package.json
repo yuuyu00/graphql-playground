@@ -14,29 +14,29 @@
     "build-schema:dts": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@types/node-fetch": "^2.5.4",
     "@graphql-codegen/cli": "^1.13.1",
     "@graphql-codegen/typescript": "^1.13.1",
     "@graphql-codegen/typescript-resolvers": "^1.13.1",
+    "@types/node-fetch": "^2.5.4",
     "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",
     "apollo-link-http": "^1.5.16",
     "apollo-server-express": "~2.6.3",
     "compression": "^1.7.4",
+    "concat": "^1.0.3",
     "express": "^4.16.4",
     "graphql": "~14.3.1",
     "graphql-date": "~1.0.3",
     "lodash": "^4.17.15",
-    "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.24",
-    "uuid": "^3.3.2",
-    "tsc-watch": "4.2.3",
     "nodemon": "2.0.2",
-    "concat": "^1.0.3",
+    "reflect-metadata": "^0.1.13",
     "replace": "^1.1.5",
     "rimraf": "3.0.2",
-    "yarn-run-all": "3.1.1",
-    "typescript": "^3.4.5"
+    "tsc-watch": "4.2.3",
+    "typeorm": "^0.2.24",
+    "typescript": "^3.4.5",
+    "uuid": "^3.3.2",
+    "yarn-run-all": "3.1.1"
   },
   "devDependencies": {
     "@types/express": "^4.16.1",
@@ -45,8 +45,11 @@
     "@types/lodash": "^4.14.123",
     "@types/on-finished": "^2.3.1",
     "@types/uuid": "^3.4.4",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
-    "eslint-plugin-typeorm": "0.0.19",
-    "eslint-plugin-graphql": "3.1.1"
+    "eslint-plugin-graphql": "3.1.1",
+    "eslint-plugin-typeorm": "0.0.19"
   }
 }
