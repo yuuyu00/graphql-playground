@@ -1,20 +1,27 @@
 type Query {
-  node(id: ID!): Node
+  note(id: String!): Note
+  notes(first: Int): [Note!]!
+  user(id: String!): User
+  users(first: Int): [User!]!
 }
+
 type Mutation {
-  noop(input: NoopInput): NoopPayload
-}
-interface Node {
-  id: ID!
-}
-input NoopInput {
-  clientMutationId: String
-}
-type NoopPayload {
-  clientMutationId: String
+  bar: String!
 }
 
 schema {
   query: Query
   mutation: Mutation
+}
+
+type Note {
+  id: String!
+  author: User!
+  content: String!
+}
+
+type User {
+  id: String!
+  name: String!
+  notes: [Note!]!
 }

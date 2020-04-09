@@ -1,11 +1,16 @@
-import { GQLResolvers } from "../types/schemaTypes";
-import { IResolvers } from "apollo-server-express";
+import { GQLResolvers } from '../types/schemaTypes'
+import { IResolvers } from 'apollo-server-express'
+import { note, notes, user, users } from './queries'
+import { Note, User } from './trivials'
 
-export const resolvers: IResolvers<any, any> & GQLResolvers = {
+export const resolvers = {
   Query: {
-    foo: () => "foo",
+    note,
+    notes,
+    user,
+    users,
   },
-  Mutation: {
-    bar: () => "bar",
-  },
-};
+  Mutation: {},
+  Note,
+  User,
+} as IResolvers<any, any> & GQLResolvers

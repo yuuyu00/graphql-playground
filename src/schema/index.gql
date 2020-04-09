@@ -1,6 +1,10 @@
 type Query {
-  foo: String!
+  note(id: String!): Note
+  notes(first: Int): [Note!]!
+  user(id: String!): User
+  users(first: Int): [User!]!
 }
+
 type Mutation {
   bar: String!
 }
@@ -8,4 +12,16 @@ type Mutation {
 schema {
   query: Query
   mutation: Mutation
+}
+
+type Note {
+  id: String!
+  author: User!
+  content: String!
+}
+
+type User {
+  id: String!
+  name: String!
+  notes: [Note!]!
 }
