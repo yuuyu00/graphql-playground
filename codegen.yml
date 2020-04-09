@@ -9,3 +9,6 @@ generates:
     config:
       typesPrefix: GQL
       noSchemaStitching: true
+      mappers:
+        Note: "../types/model#Note"
+        User: "../types/model#User"
