@@ -7,7 +7,7 @@ export const noteFixture: Note[] = [
 ]
 
 export const userFixture: User[] = [
-  { id: '1', name: 'Steve Rogers' },
-  { id: '2', name: 'Tony Stark' },
-  { id: '3', name: 'Natasha Romanoff' },
+  { id: '1', name: 'Steve Rogers', age: 25 },
+  { id: '2', name: 'Tony Stark', age: 40 },
+  { id: '3', name: 'Natasha Romanoff', age: 30 },
 ]
