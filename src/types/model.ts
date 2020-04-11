@@ -1,10 +1,11 @@
 export type Note = {
-  id: string;
-  content: string;
-  userId: string;
-};
+  id: string
+  content: string
+  userId: string
+}
 
 export type User = {
-  id: string;
-  name: string;
-};
+  id: string
+  name: string
+  age: number
+}
