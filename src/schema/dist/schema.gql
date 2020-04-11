@@ -6,7 +6,12 @@ type Query {
 }
 
 type Mutation {
-  bar: String!
+  createUser(input: CreateUserInput!): User!
+}
+
+input CreateUserInput {
+  name: String!
+  age: Int!
 }
 
 schema {
@@ -23,5 +28,6 @@ type Note {
 type User {
   id: String!
   name: String!
+  age: Int!
   notes: [Note!]!
 }

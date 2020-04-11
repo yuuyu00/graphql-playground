@@ -11,9 +11,19 @@ export type Scalars = {
   Float: number;
 };
 
+export type GQLCreateUserInput = {
+  name: Scalars['String'];
+  age: Scalars['Int'];
+};
+
 export type GQLMutation = {
    __typename?: 'Mutation';
-  bar: Scalars['String'];
+  createUser: GQLUser;
+};
+
+
+export type GQLMutationCreateUserArgs = {
+  input: GQLCreateUserInput;
 };
 
 export type GQLNote = {
@@ -55,6 +65,7 @@ export type GQLUser = {
    __typename?: 'User';
   id: Scalars['String'];
   name: Scalars['String'];
+  age: Scalars['Int'];
   notes: Array<GQLNote>;
 };
 
@@ -129,6 +140,7 @@ export type GQLResolversTypes = {
   User: ResolverTypeWrapper<User>,
   Int: ResolverTypeWrapper<Scalars['Int']>,
   Mutation: ResolverTypeWrapper<{}>,
+  CreateUserInput: GQLCreateUserInput,
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>,
 };
 
@@ -140,11 +152,12 @@ export type GQLResolversParentTypes = {
   User: User,
   Int: Scalars['Int'],
   Mutation: {},
+  CreateUserInput: GQLCreateUserInput,
   Boolean: Scalars['Boolean'],
 };
 
 export type GQLMutationResolvers<ContextType = any, ParentType extends GQLResolversParentTypes['Mutation'] = GQLResolversParentTypes['Mutation']> = {
-  bar?: Resolver<GQLResolversTypes['String'], ParentType, ContextType>,
+  createUser?: Resolver<GQLResolversTypes['User'], ParentType, ContextType, RequireFields<GQLMutationCreateUserArgs, 'input'>>,
 };
 
 export type GQLNoteResolvers<ContextType = any, ParentType extends GQLResolversParentTypes['Note'] = GQLResolversParentTypes['Note']> = {
@@ -164,6 +177,7 @@ export type GQLQueryResolvers<ContextType = any, ParentType extends GQLResolvers
 export type GQLUserResolvers<ContextType = any, ParentType extends GQLResolversParentTypes['User'] = GQLResolversParentTypes['User']> = {
   id?: Resolver<GQLResolversTypes['String'], ParentType, ContextType>,
   name?: Resolver<GQLResolversTypes['String'], ParentType, ContextType>,
+  age?: Resolver<GQLResolversTypes['Int'], ParentType, ContextType>,
   notes?: Resolver<Array<GQLResolversTypes['Note']>, ParentType, ContextType>,
   __isTypeOf?: isTypeOfResolverFn<ParentType>,
 };
