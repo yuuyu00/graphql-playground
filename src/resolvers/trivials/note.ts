@@ -6,5 +6,6 @@ export const Note: GQLNoteResolvers = {
     userFixture.find(user => user.id === parent.userId) || {
       id: '0',
       name: 'unknown',
+      age: 0,
     },
 }
