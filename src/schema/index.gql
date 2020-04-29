@@ -1,3 +1,5 @@
+scalar Date
+
 type Query {
   note(id: String!): Note
   notes(first: Int): [Note!]!
@@ -30,4 +32,11 @@ type User {
   name: String!
   age: Int!
   notes: [Note!]!
+  address: Address
+}
+
+type Address {
+  id: ID!
+  name: String!
+  user: User!
 }
