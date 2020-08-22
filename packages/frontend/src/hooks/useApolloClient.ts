@@ -15,7 +15,7 @@ export const useApolloClient = () => {
   const errorLink = onError(({ graphQLErrors }) => {
     if (!graphQLErrors) return;
 
-    graphQLErrors.map(({ extensions }) => {
+    graphQLErrors.map(() => {
       // handling error
     });
 

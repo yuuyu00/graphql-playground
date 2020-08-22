@@ -1,17 +1,24 @@
 module.exports = {
   env: {
-    node: true,
+    es6: true,
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
+  parserOptions: {
+    sourceType: "module",
+  },
+  extends: ["eslint:recommended", "prettier/react"],
+  plugins: [
+    "plugin:react/recommended",
+    "@typescript-eslint",
+    "typeorm",
+    "graphql",
+    "react",
+    "react-hooks",
   ],
-  plugins: ["@typescript-eslint", "typeorm", "graphql"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
   },
+
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2018,
@@ -21,5 +28,7 @@ module.exports = {
     "@typescript-eslint/member-delimiter-style": 0,
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+    "no-unused-vars": "off",
   },
 };
